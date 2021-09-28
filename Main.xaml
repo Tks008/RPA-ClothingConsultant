@@ -56,8 +56,8 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -84,7 +84,7 @@
         <OutArgument x:TypeArguments="ui:GenericValue">[city]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <Sequence DisplayName="Web Browser (Get the weather)" sap:VirtualizedContainerService.HintSize="242,144.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Web Browser (Get the weather)" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -176,10 +176,7 @@
       <Flowchart.StartNode>
         <x:Reference>__ReferenceID5</x:Reference>
       </Flowchart.StartNode>
-      <FlowDecision x:Name="__ReferenceID4" DisplayName="Too Cold?" sap:VirtualizedContainerService.HintSize="70,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-        <FlowDecision.Condition>
-          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="cint(temperature)&lt;40" />
-        </FlowDecision.Condition>
+      <FlowDecision x:Name="__ReferenceID4" Condition="[cint(temperature)&lt;40]" DisplayName="Too Cold?" sap:VirtualizedContainerService.HintSize="70,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -213,10 +210,7 @@
           </FlowStep>
         </FlowDecision.True>
         <FlowDecision.False>
-          <FlowDecision x:Name="__ReferenceID1" DisplayName="Too Hot?" sap:VirtualizedContainerService.HintSize="70,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
-            <FlowDecision.Condition>
-              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="cint(temperature)&gt;80" />
-            </FlowDecision.Condition>
+          <FlowDecision x:Name="__ReferenceID1" Condition="[cint(temperature)&gt;80]" DisplayName="Too Hot?" sap:VirtualizedContainerService.HintSize="70,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -309,6 +303,6 @@
         </FlowStep.Next>
       </FlowStep>
     </Flowchart>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Suggestion Box" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;In the city -&quot;+city+&quot; temperature is &quot; + temperature +&quot; and weather is &quot; +weather + &quot;.&quot;+ vbCrLf  +&quot;So suggestion is &quot;+OutfitSuggestion + rainvr]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Suggestion Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;In the city -&quot;+city+&quot; temperature is &quot; + temperature +&quot; and weather is &quot; +weather + &quot;.&quot;+ vbCrLf  +&quot; So suggestion is &quot;+OutfitSuggestion + rainvr]" />
   </Sequence>
 </Activity>
